@@ -17,7 +17,7 @@ use kira::manager::{
 use kira::sound::static_sound::{
     StaticSoundData, StaticSoundSettings
 };
-use casual_logger::Log;
+use casual_logger::{ Log, Opt };
 
 enum ControlMessage {
     Control(f64),
@@ -255,6 +255,7 @@ impl Sandbox for Player {
 
 pub fn main() -> iced::Result {
     Log::remove_old_logs();
+    Log::set_opt(Opt::Release);
 
     // gui config
     let mut settings = Settings::default();

@@ -3,10 +3,11 @@ use kira::manager::{ AudioManager, AudioManagerSettings };
 use kira::manager::backend::cpal::CpalBackend;
 use kira::sound::static_sound::{ StaticSoundData, StaticSoundSettings };
 use kira::{ tween, StartTime, Volume, LoopBehavior };
-use casual_logger::Log;
+use casual_logger::{ Log, Opt };
 
 fn main() {
     Log::remove_old_logs();
+    Log::set_opt(Opt::Release);
 
     let result = AudioManager::<CpalBackend>::new(
             AudioManagerSettings::default()
