@@ -254,8 +254,8 @@ impl Sandbox for Player {
 }
 
 pub fn main() -> iced::Result {
-    Log::remove_old_logs();
     Log::set_opt(Opt::Release);
+    Log::remove_old_logs();
 
     // gui config
     let mut settings = Settings::default();

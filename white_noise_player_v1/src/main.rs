@@ -6,8 +6,8 @@ use kira::{ tween, StartTime, Volume, LoopBehavior };
 use casual_logger::{ Log, Opt };
 
 fn main() {
-    Log::remove_old_logs();
     Log::set_opt(Opt::Release);
+    Log::remove_old_logs();
 
     let result = AudioManager::<CpalBackend>::new(
             AudioManagerSettings::default()
